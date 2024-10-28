@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const passport = require('passport');
 
 const personSchema = new mongoose.Schema({
     name: {
@@ -20,13 +21,24 @@ const personSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true
+        // unique: true
     },
     address: {
         type: String
     },
     salary: {
         type: Number,
+        required: true
+    },
+    username:{
+        type: String,
+        required: true,
+        unique: true,
+
+    },
+    password:{
+        type:String,
+        // unique: true,
         required: true
     }
 });
